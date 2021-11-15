@@ -1,0 +1,20 @@
+from tkinter import *
+import webbrowser
+
+def callback(url):
+    webbrowser.open_new(url)
+
+root = Tk()
+root.geometry("600x500")
+link1 = Label(root, text="전라북도 관광지 홈페이지", fg="blue", cursor="hand2")
+link1.pack()
+link1.bind("<Button-1>", lambda e: callback("https://korean.visitkorea.or.kr/main/main.do#area"))
+link1.place(x=100, y=400)
+
+link2 = Label(root, text="전라북도 관광지 주변 음식점", fg="blue", cursor="hand2")
+link2.pack()
+link2.bind("<Button-1>", lambda e: callback("https://tour.jb.go.kr/travel/info/list.do?category_top_id=g&menuCd=DOM_000000103006000000&contentsSid=31"))
+link2.place(x=300, y=400)
+
+
+root.mainloop()
