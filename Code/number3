@@ -1,0 +1,19 @@
+from tkinter import *
+import webbrowser
+
+def callback(url):
+    webbrowser.open_new(url)
+
+root = Tk()
+root.title("관광지 설명")
+root.geometry("600x500") # 가로 * 세로
+text = Text(root)
+text.insert(INSERT, "검색창에 관광지를 검색하시면 관광지 설명이 나옵니다")
+text.pack()
+text.place(x=90, y=380)
+link1 = Label(root, text="관광지 설명", fg="green", cursor="hand2")
+link1.pack()
+link1.bind("<Button-1>", lambda e: callback("https://namu.wiki"))
+link1.place(x=100, y=400)
+
+root.mainloop()
